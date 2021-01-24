@@ -5,6 +5,8 @@
  */
 package lab1;
 
+import javax.swing.InputVerifier;
+
 /**
  *
  * @author jessicaparedes and matthew binkley
@@ -16,7 +18,17 @@ public class NewJFrame extends javax.swing.JFrame {
      */
     public NewJFrame() {
         initComponents();
+       
+        InputVerifier nameVerifier = new MyInputVerifier();
+        InputVerifier ageVerifier = new MyInputVerifier();
         
+        jTextField1.setName("tf1"); //set name to work efficiently with different textfields
+        jTextField1.setInputVerifier(nameVerifier);
+        jTextField2.setInputVerifier(ageVerifier);
+        jTextField2.setName("tf2"); 
+        
+        
+      
     }
 
     /**
